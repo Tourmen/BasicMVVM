@@ -1,4 +1,4 @@
-package com.example.myapplicationfragmentandmvvm.ui.main
+package com.example.myapplicationfragmentandmvvm.feature
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,9 +13,10 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() =
+            MainFragment()
     }
-    private val viewModel by viewModels<MainViewModel>()
+    private val viewModel by viewModels<MyViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

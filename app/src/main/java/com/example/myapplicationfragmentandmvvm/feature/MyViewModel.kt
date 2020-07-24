@@ -1,11 +1,11 @@
-package com.example.myapplicationfragmentandmvvm.ui.main
+package com.example.myapplicationfragmentandmvvm.feature
 
 import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
-import com.example.myapplicationfragmentandmvvm.repository.MyRepository
+import com.example.myapplicationfragmentandmvvm.feature.data.MyRepository
 
-class MainViewModel @ViewModelInject constructor(
+class MyViewModel @ViewModelInject constructor(
         myRepository: MyRepository
 ) : ViewModel() {
 
