@@ -8,7 +8,8 @@ import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
 class MyViewModel @ViewModelInject constructor(
-    myRepository: MyRepository
+    myRepository: MyRepository,
+    val myViewModelState: MyViewModelState
 ) : ViewModel() {
 
     init {
@@ -17,6 +18,7 @@ class MyViewModel @ViewModelInject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { resultFromRepo ->
                 Log.d("qqq", "got from repo: $resultFromRepo")
+                myViewModelState.textField.value = resultFromRepo
             }
     }
 
