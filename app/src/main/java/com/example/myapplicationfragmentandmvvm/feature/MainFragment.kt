@@ -42,5 +42,4 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel
     }
-
 }

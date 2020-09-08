@@ -6,16 +6,19 @@ import com.example.myapplicationfragmentandmvvm.feature.data.MyRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.components.FragmentComponent
 import javax.inject.Singleton
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(FragmentComponent::class)
 class MainModule {
 
     @Provides
     @Singleton
-    fun provideRepo(myLocalDataSource: MyLocalDataSource, myRemoteDataSource: MyRemoteDataSource) : MyRepository {
+    fun provideRepo(
+        myLocalDataSource: MyLocalDataSource,
+        myRemoteDataSource: MyRemoteDataSource
+    ): MyRepository {
         return MyRepository(myLocalDataSource, myRemoteDataSource)
     }
 }

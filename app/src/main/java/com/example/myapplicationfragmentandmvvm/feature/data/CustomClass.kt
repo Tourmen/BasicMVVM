@@ -1,10 +1,11 @@
 package com.example.myapplicationfragmentandmvvm.feature.data
 
 import android.util.Log
+import javax.inject.Inject
 
-class CustomClass {
+class CustomClass @Inject constructor() {
 
     fun test() {
-        Log.d(javaClass.simpleName, "test from CustomClass")
+        Log.d("qqq", "test from CustomClass")
     }
 }
