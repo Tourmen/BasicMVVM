@@ -7,8 +7,12 @@ class MyRepository @Inject constructor(
     private val myRemoteDataSource: MyRemoteDataSource
 ) {
 
+    @Inject
+    lateinit var customClass: CustomClass
+
     fun getInfoForFeature() = myRemoteDataSource.getDataFromNetwork()
         .doOnSuccess {
+            customClass.test()
             // save to DB
         }
         .onErrorResumeNext {
