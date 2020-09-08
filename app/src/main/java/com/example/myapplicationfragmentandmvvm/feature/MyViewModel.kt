@@ -8,11 +8,12 @@ import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
 class MyViewModel @ViewModelInject constructor(
-    myRepository: MyRepository,
+    val myRepository: MyRepository,
     val myViewModelState: MyViewModelState
 ) : ViewModel() {
 
-    init {
+    fun callRepo() {
+        Log.d("qqq", "MyViewModel callRepo myRepository: $myRepository")
         myRepository.getInfoForFeature()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
