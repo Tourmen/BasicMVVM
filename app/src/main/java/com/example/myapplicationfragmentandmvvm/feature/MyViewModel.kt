@@ -1,13 +1,13 @@
 package com.example.myapplicationfragmentandmvvm.feature
 
 import android.util.Log
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.example.myapplicationfragmentandmvvm.feature.data.MyRepository
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
-class MyViewModel @ViewModelInject constructor(
+
+class MyViewModel constructor(
     val myRepository: MyRepository,
     val myViewModelState: MyViewModelState
 ) : ViewModel() {

@@ -1,14 +1,14 @@
 package com.example.myapplicationfragmentandmvvm.feature.data
 
 import android.util.Log
-import javax.inject.Inject
+import org.koin.core.KoinComponent
+import org.koin.java.KoinJavaComponent.inject
 
-class MyRepository @Inject constructor(
+class MyRepository constructor(
     private val myLocalDataSource: MyLocalDataSource,
     private val myRemoteDataSource: MyRemoteDataSource
-) {
-    @Inject
-    lateinit var customClass: CustomClass
+): KoinComponent {
+    private val customClass by inject(CustomClass::class.java)
 
     fun getInfoForFeature() = myRemoteDataSource.getDataFromNetwork()
         .doOnSuccess {

@@ -1,9 +1,8 @@
 package com.example.myapplicationfragmentandmvvm.feature.data
 
 import com.example.myapplicationfragmentandmvvm.feature.data.database.DatabaseFaker
-import javax.inject.Inject
 
-class MyLocalDataSource @Inject constructor(
+class MyLocalDataSource constructor(
     val databaseFaker: DatabaseFaker
 ) {
 

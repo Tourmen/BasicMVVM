@@ -1,12 +1,26 @@
 package com.example.myapplicationfragmentandmvvm
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+import com.example.myapplicationfragmentandmvvm.di.appModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
-@HiltAndroidApp
 class App : Application() {
 
     companion object {
         lateinit var app: App
+    }
+
+
+    override fun onCreate() {
+        super.onCreate()
+
+        // start Koin!
+        startKoin {
+            // Android context
+            androidContext(this@App)
+            // modules
+            modules(appModule)
+        }
     }
 }
