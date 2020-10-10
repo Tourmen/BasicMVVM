@@ -3,6 +3,7 @@ package com.example.myapplicationfragmentandmvvm
 import android.app.Application
 import com.example.myapplicationfragmentandmvvm.feature.MyViewModelState
 import com.example.myapplicationfragmentandmvvm.feature.ViewModelFactory
+import com.example.myapplicationfragmentandmvvm.feature.data.CustomClass
 import com.example.myapplicationfragmentandmvvm.feature.data.MyLocalDataSource
 import com.example.myapplicationfragmentandmvvm.feature.data.MyRemoteDataSource
 import com.example.myapplicationfragmentandmvvm.feature.data.MyRepository
@@ -34,7 +35,6 @@ class App : Application(), KodeinAware {
         bind<MyViewModelState>() with singleton { MyViewModelState() }
 
         bind<ViewModelFactory>() with singleton { ViewModelFactory(instance(), instance()) }
-
     }
 
     companion object {
