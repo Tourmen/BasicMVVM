@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.example.myapplicationfragmentandmvvm.R
 import kotlinx.android.synthetic.main.main_fragment.*
-import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
 
@@ -16,7 +15,8 @@ class MainFragment : Fragment() {
         fun newInstance() =
             MainFragment()
     }
-    private val viewModel : MyViewModel by viewModel()
+
+    private val viewModel: MyViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ class MainFragment : Fragment() {
             message.text = newMessage
         }
 
-        viewModel.myViewModelState.textField.observe(this, textFieldObserver)
+        viewModel!!.myViewModelState.textField.observe(this, textFieldObserver)
     }
 
     override fun onCreateView(
@@ -37,6 +37,6 @@ class MainFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.callRepo()
+        viewModel!!.callRepo()
     }
 }
