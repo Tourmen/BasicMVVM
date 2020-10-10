@@ -4,6 +4,7 @@ buildscript {
     ext.hilt_version = '2.28-alpha'
     // latest stable
     ext.koin_version = '2.1.6'
+    ext.kodein_version = "6.5.5"
 
     repositories {
         google()
