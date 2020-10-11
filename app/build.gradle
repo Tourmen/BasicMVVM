@@ -37,6 +37,16 @@ android {
     }
 }
 
+
+kapt {
+    generateStubs = true
+
+    arguments {
+        arg("toothpick_registry_package_name", "com.matheusvillela.toothpickviewmodelexample")
+        arg("toothpick_registry_children_package_names", "toothpick.smoothie")
+    }
+}
+
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -46,6 +56,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -62,7 +73,12 @@ dependencies {
     implementation 'io.reactivex:rxandroid:1.2.0'
     implementation 'io.reactivex:rxjava:1.1.8'
 
-    //kodein
-    implementation 'org.kodein.di:kodein-di:7.1.0'
+//    implementation 'com.github.stephanenicolas.toothpick:toothpick-runtime:3.1.0'
+//    implementation 'com.github.stephanenicolas.toothpick:smoothie-androidx:3.1.0'
+//    annotationProcessor 'com.github.stephanenicolas.toothpick:toothpick-compiler:3.1.0'
+
+    implementation 'com.github.stephanenicolas.toothpick:ktp:3.x'
+    kapt 'com.github.stephanenicolas.toothpick:toothpick-compiler:3.x'
+    implementation 'com.github.sporttotal-tv:toothpick-kotlin-extensions:0.2.2'
 
 }
