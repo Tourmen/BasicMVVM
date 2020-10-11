@@ -62,7 +62,4 @@ dependencies {
     implementation 'io.reactivex:rxandroid:1.2.0'
     implementation 'io.reactivex:rxjava:1.1.8'
 
-    //kodein
-    implementation 'org.kodein.di:kodein-di:7.1.0'
-
 }
